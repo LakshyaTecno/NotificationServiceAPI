@@ -4,7 +4,6 @@ const serverConfig = require("./configs/server.config");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const dbConfig = require("./configs/db.config");
-const notification = require("./models/notification.model");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +16,8 @@ db.on("error", () => {
 db.once("open", () => {
   console.log("Connected to mongoDB");
 });
+require("./routes/notification.route")(app);
+require("./schedulers/emailScheduler");
 
 app.listen(serverConfig.PORT, () => {
   console.log("Started the server on the PORT number : ", serverConfig.PORT);

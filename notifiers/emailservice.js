@@ -8,8 +8,8 @@ module.exports = nodemailer.createTransport({
   //host: "smtp.gmail.com",
   service: "gmail",
   auth: {
-    user: "vish007dev@gmail.com",
-    pass: "vpphciilrvkzgmkq",
+    user: "lakshyatecno@gmail.com",
+    pass: "epjbhgdztpfhyvpu",
   },
   secure: true,
 });
