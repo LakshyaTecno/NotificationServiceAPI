@@ -10,7 +10,7 @@ exports.acceptNotificationRequest = async (req, res) => {
       status: req.body.status,
     };
 
-    const notification = await Notification.create(NotificationObj);
+    const notification = await Notification.create(NotificationObj) ;
     res.status(201).send({
       message: "Request accepted",
       trackingId: notification._id,
